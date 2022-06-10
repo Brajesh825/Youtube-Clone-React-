@@ -11,9 +11,12 @@ import {
   MdSentimentDissatisfied,
 } from "react-icons/md";
 
-const Sidebar = () => {
+const Sidebar = ({ sidebar, handleToggleSidebar }) => {
   return (
-    <div className="border border-danger sidebar">
+    <nav
+      className={sidebar ? "sidebar open" : "sidebar"}
+      onClick={() => handleToggleSidebar()}
+    >
       <li>
         <MdHome size={23} />
         <span>Home</span>
@@ -48,7 +51,7 @@ const Sidebar = () => {
         <MdExitToApp size={23} />
         <span>Log Out</span>
       </li>
-    </div>
+    </nav>
   );
 };
 
